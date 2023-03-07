@@ -143,7 +143,5 @@ def play_game():
                 continue
         continue
 
-    return
-
 
 play_game()
