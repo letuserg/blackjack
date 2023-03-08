@@ -141,18 +141,6 @@ def play_game():
                 if decision == "3":
                     if calculate_hand_value(dealer_hand) > 21:
                         print('Dealer busts! Player wins.')
-                        bankroll += bet
-                    elif calculate_hand_value(dealer_hand) > calculate_hand_value(player_hand):
-                        print('Dealer wins.')
-                        bankroll -= bet
-                    elif calculate_hand_value(dealer_hand) < calculate_hand_value(player_hand):
-                        print('Player wins.')
-                        bankroll += bet
-                    else:
-                        print('Push.')
-                else:
-                    if calculate_hand_value(dealer_hand) > 21:
-                        print('Dealer busts! Player wins.')
                         bankroll += bet * 2
                     elif calculate_hand_value(dealer_hand) > calculate_hand_value(player_hand):
                         print('Dealer wins.')
@@ -160,6 +148,18 @@ def play_game():
                     elif calculate_hand_value(dealer_hand) < calculate_hand_value(player_hand):
                         print('Player wins.')
                         bankroll += bet * 2
+                    else:
+                        print('Push.')
+                else:
+                    if calculate_hand_value(dealer_hand) > 21:
+                        print('Dealer busts! Player wins.')
+                        bankroll += bet
+                    elif calculate_hand_value(dealer_hand) > calculate_hand_value(player_hand):
+                        print('Dealer wins.')
+                        bankroll -= bet
+                    elif calculate_hand_value(dealer_hand) < calculate_hand_value(player_hand):
+                        print('Player wins.')
+                        bankroll += bet
                     else:
                         print('Push.')
             break
