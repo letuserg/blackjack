@@ -95,6 +95,25 @@ def play_game():
                             break
                         else:
                             print(f'Dealer\'s hand: [\'{dealer_hand[0]}\', \'?\']')
+                            while True:
+                                decision = input('1 - hit, 2 - stand: ')
+                                if decision == '1':
+                                    player_hand += deal_cards(1)
+                                    print(f'Player\'s hand: {player_hand}')
+                                    print("Player's score is " + str(calculate_hand_value(player_hand)))
+                                    if calculate_hand_value(player_hand) > 21:
+                                        print('Player busts! Dealer wins.')
+                                        bankroll -= bet
+                                        break
+                                    else:
+                                        print(f'Dealer\'s hand: [\'{dealer_hand[0]}\', \'?\']')
+                                elif decision == '2':
+                                    print("Player's final score is " + str(calculate_hand_value(player_hand)))
+                                    break
+                                else:
+                                    print("Invalid input, please enter 1 or 2.")
+                                    continue
+                            break
                     elif decision == '2':
                         print("Player's final score is " + str(calculate_hand_value(player_hand)))
                         break
