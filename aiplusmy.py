@@ -134,7 +134,7 @@ def play_game():
             if not calculate_hand_value(player_hand) > 21:
                 print(f'Dealer\'s hand: {dealer_hand}')
                 print("Dealer's score is " + str(calculate_hand_value(dealer_hand)))
-                while calculate_hand_value(dealer_hand) < 17 and calculate_hand_value(dealer_hand) <= calculate_hand_value(player_hand):
+                while calculate_hand_value(dealer_hand) < 17:
                     dealer_hand += deal_cards(1)
                     print(f'Dealer\'s hand: {dealer_hand}')
                     print("Dealer's score is " + str(calculate_hand_value(dealer_hand)))
