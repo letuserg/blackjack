@@ -58,7 +58,7 @@ def play_game():
                 print(
                     f"Player's hand: {player_hand}\nPlayer has a blackjack!\nDealer's hand: {dealer_hand}\nDealer's "
                     f"score is {hand_sum(dealer_hand)}\nPlayer wins!")
-                bankroll += bet
+                bankroll += bet * 0.5
                 break
             if is_blackjack(dealer_hand) and not is_blackjack(player_hand):
                 print(
